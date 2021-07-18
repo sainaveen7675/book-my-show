@@ -5,10 +5,18 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const HeroCarousel = () => {
+    const settingsLG = {
+        arrows: true,
+        autoplay: true,
+        centerMode: true,
+        centerPadding: "300px",
+        slidesToShow: 1,
+        infinite: true,
+        slidesToScroll: 1
+    };
+
     const settings = {
-        arrows:true,
-        centerMode:true,
-        centerPadding:"200px",
+        arrows: true,
         dots: true,
         infinite: true,
         speed: 500,
@@ -17,23 +25,34 @@ const HeroCarousel = () => {
     };
 
     const images = [
-        "https://images.unsplash.com/photo-1622495549609-523be9cc6f32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
-        "https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-        "https://images.unsplash.com/photo-1625921765718-40e14ee8641c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=755&q=80",
-        "https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
-        "https://images.unsplash.com/photo-1563986768711-b3bde3dc821e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=748&q=80"
+        "https://in.bmscdn.com/promotions/cms/creatives/1626516962069_honestthief_1280x500_ios.jpg",
+        "https://in.bmscdn.com/promotions/cms/creatives/1626343774760_admissionrageproductionsfestival_webshowcase_1280x500.jpg",
+        "https://in.bmscdn.com/promotions/cms/creatives/1626372121139_bsm_1280x500_romcom_1.jpg",
+        "https://in.bmscdn.com/promotions/cms/creatives/1626086157424_diyartcraftliveworkshopforsunfeastyippee_webshowcase_1280x500_revised.jpg",
+        "https://in.bmscdn.com/promotions/cms/creatives/1625135512787_bas_1280x500.jpg"
     ];
 
     return (
-       <>
-         <HeroSlider {...settings}>
-             {images.map((image) => (
-                 <div className="w-20 h-80 gap-4">
-                     <img src={image} alt="testing" className="w-full h-full"/>
-                 </div>
-             ))}
-         </HeroSlider>
-       </>
+        <>
+            <div className="lg:hidden">
+                <HeroSlider {...settings}>
+                    {images.map((image) => (
+                        <div className="w-full h-56 md:h-80 py-3">
+                            <img src={image} alt="testing" className="w-full h-full" />
+                        </div>
+                    ))}
+                </HeroSlider>
+            </div>
+            <div className="hidden lg:block">
+                <HeroSlider {...settingsLG}>
+                    {images.map((image) => (
+                        <div className="w-full h-96 px-2 py-3">
+                            <img src={image} alt="testing" className="w-full h-full rounded-md" />
+                        </div>
+                    ))}
+                </HeroSlider>
+            </div>
+        </>
     );
 };
 
