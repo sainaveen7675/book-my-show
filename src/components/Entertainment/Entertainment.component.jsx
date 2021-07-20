@@ -17,7 +17,7 @@ const EntertainmentCard = (props) => {
 
 const EntertainmentCardSlider = () => {
     const EntertainmentImage = [
-        "https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MjMwKyBFdmVudHM%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/workshops-collection-202007231330.png",
+        "https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MjQwKyBFdmVudHM%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/workshops-collection-202007231330.png",
         "https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTUrIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/fitness-collection-2020081150.png",
         "https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-ODUrIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/kids-collection-202007220710.png",
         "https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-NTArIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/comedy-shows-collection-202007220710.png",
@@ -31,14 +31,14 @@ const EntertainmentCardSlider = () => {
     ];
 
     const settings = {
-        infinity: false,
-        autoplay: false,
-        slidesToShow: 4,
+        infinity: false,  // to scroll the carousel infinite no of times
+        autoplay: false,  // to scroll automatically
+        slidesToShow: 4,  
         slidesToScroll: 4,
-        InitialSlide: 0,
+        initialSlide: 0,
         responsive: [
             {
-                breakpoints: 1024,
+                breakpoints: 1024, // responsive design breakpoints
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 2,

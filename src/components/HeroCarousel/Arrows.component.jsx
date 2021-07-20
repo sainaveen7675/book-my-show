@@ -7,6 +7,7 @@ export const NextArrow = (props) => {
             <div
                 className={props.className}
                 style={{ ...props.style, backgroundColor: "black" }}
+                // here inline styling must contain cammel case
                 onClick={props.onClick}
             />
         </>
