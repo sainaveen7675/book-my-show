@@ -17,7 +17,7 @@ const PosterSlider = (props) => {
             </div>
             <Slider {...PosterCarouselSettings}>
                 {props.images.map((image) => (
-                    <Poster{...image} isDark={props.isDark} />
+                    <Poster{...image} isDark={props.isDark} /> // isDark -> used for dark bg
                 ))}
             </Slider>
         </>

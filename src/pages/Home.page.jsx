@@ -48,6 +48,13 @@ const HomePage = () => {
                     title="Outdoor Events" 
                     isDark={false}/>
             </div>
+
+            <div className="container mx-auto px-4 my-8">
+                <PosterSlider
+                    images={TempPosters}
+                    title="Laughter Therapy" 
+                    isDark={false}/>
+            </div>
         </>
     );
 }
