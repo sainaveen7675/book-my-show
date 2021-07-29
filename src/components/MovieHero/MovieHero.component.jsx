@@ -18,11 +18,11 @@ const MovieHero = () => {
                         className="w-full h-full" />
                 </div>
                 {/* Medium */}
-                <div className="relative hidden md:block w-full lg:hidden" style={{ height: "calc(130vw)" }}>
-                    <div className="w-full h-56 bg-opacity-50 absolute bg-black z-10 bottom-0" />
+                <div className="relative hidden md:block w-full lg:hidden" style={{ height: "calc(100vw)" }}>
                     <div className="absolute z-20 bottom-4">
                         <MovieInfo />
                     </div>
+                    <div className="w-full h-56 bg-opacity-50 absolute bg-black z-10 bottom-0" />
                     <img
                         src="https://in.bmscdn.com/iedb/movies/images/extra/vertical_logo/mobile/thumbnail/xxlarge/zack-snyder-s-justice-league-et00047164-10-04-2021-03-22-49.jpg"
                         alt="poster"
