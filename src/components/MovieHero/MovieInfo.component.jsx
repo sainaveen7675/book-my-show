@@ -1,6 +1,14 @@
-import React from "react";  
+import React, { useContext } from "react";
+
+// Context
+import { MovieContext } from "../../context/movie.context";
 
 const MovieInfo = () => {
+    const { movie } = useContext(MovieContext);
+
+    // Optional Chaining..
+    const genres = movie.genres?.map(({ name }) => name).join(". ");
+
     return (
         <>
             <div className="flex flex-col gap-3 lg:gap-8">
@@ -10,13 +18,17 @@ const MovieInfo = () => {
                             alt="Premier"
                             className="w-full h-full" />
                     </div>
-                    <span className="bg-bms-700 p-1 text-xs text-white rounded-md">Streaming Now</span>
+                    <span className="bg-bms-700 p-1 text-xs text-white rounded-md">
+                        Streaming Now
+                    </span>
                 </div>
-                <h1 className="hidden lg:block text-white lg:text-5xl font-bold">Justice league</h1>
+                <h1 className="text-white lg:text-5xl font-bold hidden lg:block">
+                    {movie.original_title}
+                </h1>
                 <div className="flex flex-col-reverse gap-3 lg:gap-5 lg:flex-col">
                     <div className="text-white font-light flex flex-col gap-5 md:px-4">
-                        <h4>4k &bull; English &bull; &Action</h4>
-                        <h4>1h 53m &bull; Action, Sci-Fi, &bull; &Action</h4>
+                        <h4>4k &bull; {movie.original_language}</h4>
+                        <h4>{(movie.runtime / 60).toFixed(2)} h &bull; {genres} &bull; 13+</h4>
                     </div>
                     <div className="flex items-center gap-3 md:px-4 md:w-screen lg:w-full">
                         <button className="bg-red-600 w-full py-3 text-white font-semibold rounded-lg">
@@ -31,5 +43,7 @@ const MovieInfo = () => {
         </>
     )
 }
+
+//  line-31 : toFixed(2) -> it will give us the only 2 fixed decimal digits...... eg: 2.56
 
 export default MovieInfo;
