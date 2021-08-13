@@ -18,7 +18,7 @@ const MovieLayout = (props) => {
             setMovie(getMovieData.data); // axios always use ".data" to access the process data. If we using axios, we need to use ".data everywhere"
         }
         requestMovie();
-    }, []);
+    }, [id]);
 
     return (
         <>
